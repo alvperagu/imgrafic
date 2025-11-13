@@ -10,7 +10,7 @@ function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <Printer className="w-8 h-8 text-cyan-400" />
-              <span className="text-2xl font-bold">PrintMaster</span>
+              <span className="text-2xl font-bold">Imgrafic</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
               Tu socio confiable en soluciones de impresión profesional y diseño gráfico de alta calidad.
@@ -39,17 +39,18 @@ function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">Contacto</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>info@printmaster.com</li>
-              <li>+34 912 345 678</li>
-              <li>Calle de la Imprenta, 123</li>
-              <li>28001 Madrid, España</li>
+              <li>infoimgrafic@gmail.com</li>
+              <li>+34 661 21 65 64</li>
+              <li>924 57 20 78</li>
+              <li>Av. Constitución, 79</li>
+              <li>06230 Los Santos de Maimona</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {currentYear} PrintMaster. Todos los derechos reservados.
+            © {currentYear} Imgrafic. Todos los derechos reservados.
           </p>
 
           <div className="flex space-x-4">

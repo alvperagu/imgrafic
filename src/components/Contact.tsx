@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -20,13 +21,30 @@ function Contact() {
 
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setSubmitStatus('success');
-      setIsSubmitting(false);
-      setFormData({ name: '', email: '', message: '' });
+    try {
+      const { error } = await supabase
+        .from('contact_messages')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message
+          }
+        ]);
 
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    }, 1000);
+      if (error) {
+        setSubmitStatus('error');
+      } else {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+
+        setTimeout(() => setSubmitStatus('idle'), 3000);
+      }
+    } catch (err) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -138,8 +156,7 @@ function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">Email</h4>
-                  <p className="text-gray-600">info@printmaster.com</p>
-                  <p className="text-gray-600">ventas@printmaster.com</p>
+                  <p className="text-gray-600">infoimgrafic@gmail.com</p>
                 </div>
               </div>
 
@@ -149,8 +166,8 @@ function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">Teléfono</h4>
-                  <p className="text-gray-600">+34 912 345 678</p>
-                  <p className="text-gray-600">+34 645 789 123</p>
+                  <p className="text-gray-600">+34 661 21 65 64</p>
+                  <p className="text-gray-600">924 57 20 78</p>
                 </div>
               </div>
 
@@ -160,8 +177,8 @@ function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">Dirección</h4>
-                  <p className="text-gray-600">Calle de la Imprenta, 123</p>
-                  <p className="text-gray-600">28001 Madrid, España</p>
+                  <p className="text-gray-600">Av. de la Constitución, 79</p>
+                  <p className="text-gray-600">06230 Los Santos de Maimona, Badajoz</p>
                 </div>
               </div>
             </div>

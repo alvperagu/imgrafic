@@ -20,7 +20,7 @@ function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-2 cursor-pointer" onClick={() => scrollToSection('hero')}>
             <Printer className="w-8 h-8 text-cyan-600" />
-            <span className="text-2xl font-bold text-gray-900">PrintMaster</span>
+            <span className="text-2xl font-bold text-gray-900">Imgrafic</span>
           </div>
 
           <nav className="hidden md:flex space-x-8">

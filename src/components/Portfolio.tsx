@@ -1,39 +1,39 @@
 const projects = [
   {
-    title: 'Catálogo Corporativo',
-    description: 'Catálogo de 120 páginas con encuadernación en tapa dura',
-    type: 'Impresión Offset',
-    image: 'https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg?auto=compress&cs=tinysrgb&w=800'
-  },
-  {
-    title: 'Packaging Premium',
-    description: 'Diseño de cajas personalizadas para productos de lujo',
-    type: 'Packaging Personalizado',
-    image: 'https://images.pexels.com/photos/4226876/pexels-photo-4226876.jpeg?auto=compress&cs=tinysrgb&w=800'
-  },
-  {
-    title: 'Tarjetas Corporativas',
-    description: 'Tarjetas con acabado mate y relieve UV selectivo',
+    title: 'Impresión de Pegatinas Personalizadas',
+    description: 'Pegatinas adhesivas para marcas y promociones con acabado mate o brillante',
     type: 'Impresión Digital',
-    image: 'https://images.pexels.com/photos/6953842/pexels-photo-6953842.jpeg?auto=compress&cs=tinysrgb&w=800'
+    image: 'https://images.pexels.com/photos/3962285/pexels-photo-3962285.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
-    title: 'Material Publicitario',
-    description: 'Flyers y folletos para campaña de marketing',
+    title: 'Carteles Promocionales',
+    description: 'Carteles impresos en formato A2 y A1 con acabados profesionales',
+    type: 'Impresión Offset',
+    image: 'https://images.pexels.com/photos/3535382/pexels-photo-3535382.jpeg?auto=compress&cs=tinysrgb&w=800'
+  },
+  {
+    title: 'Etiquetas para Productos',
+    description: 'Etiquetas adhesivas y resistentes al agua para envases',
     type: 'Impresión Digital',
-    image: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800'
+    image: 'https://images.pexels.com/photos/3454298/pexels-photo-3454298.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
-    title: 'Revista Institucional',
-    description: 'Revista trimestral de 60 páginas a todo color',
-    type: 'Impresión Offset',
-    image: 'https://images.pexels.com/photos/1164674/pexels-photo-1164674.jpeg?auto=compress&cs=tinysrgb&w=800'
+    title: 'Tarjetas de Visita',
+    description: 'Tarjetas con acabados especiales: relieve, laminado mate y brillo',
+    type: 'Impresión Digital',
+    image: 'https://images.pexels.com/photos/3962290/pexels-photo-3962290.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
-    title: 'Libro de Arte',
-    description: 'Impresión de libro con papel couché de alta gramatura',
+    title: 'Banners y Lonas',
+    description: 'Impresión en vinilo para eventos, tiendas y exteriores',
+    type: 'Impresión de Gran Formato',
+    image: 'https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=800'
+  },
+  {
+    title: 'Folletos Doblados',
+    description: 'Folletos impresos y troquelados con doblado profesional',
     type: 'Impresión Offset',
-    image: 'https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=800'
+    image: 'https://images.pexels.com/photos/3379933/pexels-photo-3379933.jpeg?auto=compress&cs=tinysrgb&w=800'
   }
 ];
 

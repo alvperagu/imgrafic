@@ -59,8 +59,8 @@ function About() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/6469/red-hands-woman-creative.jpg?auto=compress&cs=tinysrgb&w=800"
-                alt="Nuestro equipo"
+                src="https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Nuestro equipo trabajando"
                 className="w-full h-full object-cover"
               />
             </div>

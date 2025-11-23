@@ -1,15 +1,18 @@
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown } from "lucide-react";
 
 function Hero() {
   const scrollToServices = () => {
-    const element = document.getElementById('services');
+    const element = document.getElementById("services");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-cyan-50 via-blue-50 to-gray-100 pt-16">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-cyan-50 via-blue-50 to-gray-100 pt-16"
+    >
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -17,8 +20,10 @@ function Hero() {
           Impresión de <span className="text-cyan-600">Alta Calidad</span>
         </h1>
         <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fade-in-delay">
-          Somos una imprenta especializada en diseño y producción de materiales gráficos de alta calidad.
-          Transformamos tus ideas en realidad con tecnología de última generación.
+          Transformamos tus ideas en productos impresos de alta calidad: flyers,
+          tarjetas, folletos y todo tipo de material gráfico. Combinamos
+          creatividad, precisión y tecnología de última generación para que tu
+          proyecto destaque.
         </p>
         <button
           onClick={scrollToServices}

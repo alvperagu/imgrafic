@@ -1,60 +1,102 @@
-import { FileText, Printer, CreditCard, BookOpen, Package, Palette } from 'lucide-react';
+import impresionOffsetImg from "../assets/impresion_offset.jpg";
+import camisetasImg from "../assets/camisetas.jpeg";
+import copisteriaImg from "../assets/copisteria.jpg";
+import tallerImg from "../assets/taller.jpg";
+import flyerImg from "../assets/flyer.jpeg";
+import designImg from "../assets/design.jpg";
 
-const services = [
+const projects = [
   {
-    icon: Printer,
-    title: 'Impresión Offset',
-    description: 'Impresión de alta calidad para grandes volúmenes. Ideal para libros, revistas y catálogos.'
+    title: "Diseño Gráfico",
+    description:
+      "Soluciones creativas y profesionales para identidad visual, branding, material publicitario y diseño de piezas corporativas listas para impresión.",
+    type: "Diseño Gráfico",
+    image: designImg,
   },
   {
-    icon: FileText,
-    title: 'Impresión Digital',
-    description: 'Impresión rápida y versátil para tiradas cortas y medianas con acabados profesionales.'
+    title: "Rotulación",
+    description:
+      "Rotulación interior y exterior con vinilo de alta durabilidad, señalética personalizada y aplicaciones gráficas para escaparates, vehículos y espacios comerciales.",
+    type: "Rotulación",
+    image: tallerImg,
   },
   {
-    icon: CreditCard,
-    title: 'Tarjetas de Presentación',
-    description: 'Tarjetas personales y corporativas con diversos acabados: mate, brillo, relieve y más.'
+    title: "Copistería Profesional",
+    description:
+      "Servicio de copias, escaneo y encuadernación para documentos empresariales.",
+    type: "Copistería",
+    image: copisteriaImg,
   },
   {
-    icon: FileText,
-    title: 'Flyers y Folletos',
-    description: 'Material promocional impactante para tus campañas publicitarias y eventos.'
+    title: "Serigrafía y Personalizaciones",
+    description:
+      "Personalización de tazas, camisetas, textiles, artículos corporativos y merchandising con serigrafía, impresión digital y otras técnicas de alta durabilidad.",
+    type: "Personalizaciones",
+    image: camisetasImg,
   },
   {
-    icon: BookOpen,
-    title: 'Catálogos',
-    description: 'Catálogos de productos con encuadernación profesional y acabados premium.'
+    title: "Impresión Offset y Digital",
+    description:
+      "Impresión profesional para grandes y pequeñas tiradas, con acabados precisos, máxima fidelidad de color y equipos de última generación.",
+    type: "Impresión Offset",
+    image: impresionOffsetImg,
   },
   {
-    icon: Package,
-    title: 'Packaging Personalizado',
-    description: 'Diseño y producción de empaques únicos que destacan tu marca.'
-  }
+    title: "Flyers, Folletos y Tarjetas",
+    description:
+      "Diseño e impresión de flyers, folletos y tarjetas corporativas personalizadas para mejorar la presencia y comunicación de tu marca.",
+    type: "Impresión Digital",
+    image: flyerImg,
+  },
 ];
 
 function Services() {
   return (
-    <section id="services" className="py-20 bg-white">
+    <section
+      id="services"
+      className="py-20 bg-gradient-to-br from-gray-50 to-cyan-50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Nuestros Servicios</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Nuestros Servicos
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ofrecemos una amplia gama de servicios de impresión para satisfacer todas tus necesidades
+            Ofrecemos una amplia gama de servicios de impresión y diseño.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {projects.map((project, index) => (
             <div
               key={index}
-              className="group p-8 bg-gradient-to-br from-gray-50 to-cyan-50 rounded-xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="group relative overflow-hidden rounded-xl shadow-lg bg-white hover:shadow-2xl transition-all duration-500"
             >
-              <div className="w-16 h-16 bg-cyan-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <service.icon className="w-8 h-8 text-white" />
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{service.description}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-300">
+                  <span className="inline-block px-3 py-1 bg-cyan-600 text-xs font-semibold rounded-full mb-3">
+                    {project.type}
+                  </span>
+                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-gray-200 text-sm">{project.description}</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <span className="inline-block px-3 py-1 bg-cyan-100 text-cyan-700 text-xs font-semibold rounded-full mb-3">
+                  {project.type}
+                </span>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 text-sm">{project.description}</p>
+              </div>
             </div>
           ))}
         </div>

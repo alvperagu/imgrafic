@@ -1,4 +1,4 @@
-import { Award, Users, Zap } from 'lucide-react';
+import { Award, Users, Zap } from "lucide-react";
 
 function About() {
   return (
@@ -6,15 +6,18 @@ function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Sobre Nosotros</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Sobre Nosotros
+            </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Con más de 15 años de experiencia en la industria gráfica, nos hemos consolidado como
-              una de las imprentas más confiables y profesionales del sector.
+              Con más de 15 años en la industria gráfica, nos hemos convertido
+              en una imprenta de confianza, reconocida por nuestra
+              profesionalidad y compromiso con cada proyecto.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Nuestro compromiso es ofrecer productos de la más alta calidad, utilizando tecnología
-              de última generación y un equipo de profesionales altamente capacitados que trabajan
-              para superar las expectativas de cada cliente.
+              Nos apasiona crear productos de la más alta calidad, apoyándonos
+              en tecnología de última generación y un equipo de profesionales
+              que siempre buscan superar las expectativas de nuestros clientes.
             </p>
 
             <div className="space-y-4">
@@ -23,9 +26,12 @@ function About() {
                   <Award className="w-6 h-6 text-cyan-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">Calidad Garantizada</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    Calidad que se nota
+                  </h3>
                   <p className="text-gray-600">
-                    Utilizamos los mejores materiales y procesos para asegurar resultados excepcionales
+                    Trabajamos con los mejores materiales y procesos para
+                    garantizar resultados excepcionales en cada trabajo.
                   </p>
                 </div>
               </div>
@@ -35,9 +41,13 @@ function About() {
                   <Users className="w-6 h-6 text-cyan-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">Equipo Profesional</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    Un equipo de expertos
+                  </h3>
                   <p className="text-gray-600">
-                    Nuestro equipo está formado por expertos con años de experiencia en el sector
+                    Nuestro equipo está formado por profesionales con años de
+                    experiencia, listos para asesorarte y ayudarte a lograr lo
+                    que imaginas.
                   </p>
                 </div>
               </div>
@@ -47,9 +57,13 @@ function About() {
                   <Zap className="w-6 h-6 text-cyan-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">Entregas Rápidas</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    Entregas puntuales
+                  </h3>
                   <p className="text-gray-600">
-                    Optimizamos nuestros procesos para garantizar entregas en los plazos acordados
+                    Optimizar nuestros procesos nos permite cumplir siempre con
+                    los plazos acordados, para que tus proyectos lleguen a
+                    tiempo.
                   </p>
                 </div>
               </div>

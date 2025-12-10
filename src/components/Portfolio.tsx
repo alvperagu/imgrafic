@@ -48,31 +48,31 @@ function Portfolio() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-            >
-              <div className="aspect-[4/3] overflow-hidden relative">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              >
+                <div className="aspect-[4/3] overflow-hidden relative">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300"></div>
+                </div>
+                <div className="p-6 bg-gradient-to-br from-white to-gray-50 group-hover:from-yellow-50 group-hover:to-white transition-colors duration-300">
+                  <span className="inline-block px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-semibold rounded-full mb-3 group-hover:bg-yellow-200 transition-colors duration-300">
+                    {project.type}
+                  </span>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-yellow-700 transition-colors duration-300">{project.title}</h3>
+                  <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors duration-300">{project.description}</p>
+                </div>
               </div>
-              <div className="p-6 bg-gradient-to-br from-white to-gray-50 group-hover:from-yellow-50 group-hover:to-white transition-colors duration-300">
-                <span className="inline-block px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-semibold rounded-full mb-3 group-hover:bg-yellow-200 transition-colors duration-300">
-                  {project.type}
-                </span>
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-yellow-700 transition-colors duration-300">{project.title}</h3>
-                <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors duration-300">{project.description}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
     </section>
   );
 }

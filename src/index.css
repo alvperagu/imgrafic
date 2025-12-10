@@ -37,3 +37,11 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Make hero background less zoomed on small screens */
+@media (max-width: 640px) {
+  .hero-bg {
+    background-size: 100% auto !important;
+    background-position: center top !important;
+  }
+}

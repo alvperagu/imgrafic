@@ -12,13 +12,12 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-center overflow-hidden hero-bg"
       style={{
         backgroundImage: `url(${fondo})`,
-        backgroundSize: "100%",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "top",
-        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
       }}
     >
       {/* Gradient + blur overlay for better readability */}

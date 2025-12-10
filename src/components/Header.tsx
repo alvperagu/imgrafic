@@ -1,6 +1,6 @@
 import { Menu, X } from "lucide-react";
 import Logo from "../assets/logo.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -19,6 +19,78 @@ function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
+  // Refs and focus-trap for mobile menu
+  const panelRef = useRef<HTMLDivElement | null>(null);
+  const prevActiveRef = useRef<Element | null>(null);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    prevActiveRef.current = document.activeElement;
+
+    // Slide-in: remove translate-x-full in next frame to trigger transition
+    const panel = panelRef.current;
+    if (panel) {
+      // ensure starting position
+      panel.classList.add("translate-x-full");
+      requestAnimationFrame(() => {
+        panel.classList.remove("translate-x-full");
+        panel.classList.add("translate-x-0");
+      });
+
+      // focus close button when opened
+      const closeBtn = panel.querySelector<HTMLButtonElement>(
+        "button[aria-label='Cerrar menú']"
+      );
+      closeBtn?.focus();
+    }
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsMenuOpen(false);
+        return;
+      }
+
+      if (e.key === "Tab") {
+        // focus trap
+        const focusable = panel?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+        );
+        if (!focusable || focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      // restore focus
+      (prevActiveRef.current as HTMLElement | null)?.focus?.();
+    };
+  }, [isMenuOpen]);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -35,7 +107,7 @@ function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-50">
         <div className="flex justify-between items-center py-3">
           {/* LOGO */}
           <div
@@ -95,7 +167,7 @@ function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
 
           {/* MOBILE MENU BUTTON */}
           <button
-            className={`md:hidden transition-colors ${
+            className={`hidden md:block transition-colors ${
               isScrolled ? "text-gray-900" : "text-white"
             }`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}

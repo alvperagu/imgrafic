@@ -1,4 +1,5 @@
 import { ArrowDown } from "lucide-react";
+import fondo from "../assets/fondo.png";
 
 function Hero() {
   const scrollToServices = () => {
@@ -11,31 +12,55 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-cyan-50 via-blue-50 to-gray-100 pt-16"
+      className="relative min-h-screen flex items-center justify-center bg-center overflow-hidden"
+      style={{
+        backgroundImage: `url(${fondo})`,
+        backgroundSize: "100%",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "top",
+        backgroundAttachment: "fixed",
+      }}
     >
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      {/* Gradient + blur overlay for better readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/20 backdrop-blur-sm"></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 animate-fade-in">
-          Impresión de <span className="text-cyan-600">Alta Calidad</span>
+      {/* Hero content */}
+      <div className="relative max-w-6xl mx-auto px-6 text-center animate-fade-up">
+        {/* Tagline */}
+        <h2 className="text-white uppercase tracking-widest font-semibold text-sm sm:text-base mb-4 opacity-90">
+          Centro profesional de impresión
+        </h2>
+
+        {/* Main Title */}
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-snug mb-6 drop-shadow-xl">
+          Impresión que eleva tu{" "}
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-300">
+            marca
+          </span>
         </h1>
-        <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fade-in-delay">
-          Transformamos tus ideas en productos impresos de alta calidad: flyers,
-          tarjetas, folletos y todo tipo de material gráfico. Combinamos
-          creatividad, precisión y tecnología de última generación para que tu
-          proyecto destaque.
+
+        {/* Supporting text */}
+        <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed">
+          Soluciones gráficas de nivel corporativo: tarjetas, papelería,
+          rotulación, diseño, cartelería y material publicitario. Somos tu
+          aliado visual para proyectar calidad y profesionalismo.
         </p>
+
+        {/* CTA Button */}
         <button
           onClick={scrollToServices}
-          className="inline-flex items-center px-8 py-4 bg-cyan-600 text-white font-semibold rounded-lg hover:bg-cyan-700 transition-all transform hover:scale-105 shadow-lg animate-fade-in-delay-2"
+          aria-label="Explorar servicios"
+          className="inline-flex items-center px-12 py-4 bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900 font-semibold rounded-2xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
         >
-          Descubre nuestros servicios
-          <ArrowDown className="ml-2 w-5 h-5" />
+          Explorar servicios
+          <ArrowDown className="ml-3 w-5 h-5" />
         </button>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="w-6 h-6 text-gray-400" />
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 animate-bounce">
+        <div className="w-px h-6 bg-white/40 animate-pulse"></div>
+        <ArrowDown className="w-7 h-7 text-white/50" />
       </div>
     </section>
   );

@@ -63,7 +63,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-br from-gray-50 to-cyan-50"
+      className="py-20 bg-gradient-to-br from-gray-50 to-yellow-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -94,7 +94,7 @@ function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-600 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent outline-none transition-all"
                   placeholder="Juan Pérez"
                   required
                 />
@@ -113,7 +113,7 @@ function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-600 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent outline-none transition-all"
                   placeholder="juan@ejemplo.com"
                   required
                 />
@@ -132,7 +132,7 @@ function Contact() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-600 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent outline-none transition-all"
                   placeholder="+34 600 00 00 00"
                   required
                 />
@@ -151,7 +151,7 @@ function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-600 focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent outline-none transition-all resize-none"
                   placeholder="Cuéntanos sobre tu proyecto..."
                   required
                 />
@@ -160,7 +160,7 @@ function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-cyan-600 text-white font-semibold py-4 rounded-lg hover:bg-cyan-700 transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                className="w-full bg-yellow-400 text-gray-900 font-semibold py-4 rounded-lg hover:bg-yellow-500 transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
               >
                 {isSubmitting ? (
                   "Enviando..."
@@ -192,8 +192,8 @@ function Contact() {
               </h3>
               <div className="space-y-6 mb-8">
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-cyan-600" />
+                  <div className="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-yellow-400" />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">
@@ -204,8 +204,8 @@ function Contact() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-cyan-600" />
+                  <div className="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                    <Phone className="w-6 h-6 text-yellow-400" />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">
@@ -217,8 +217,8 @@ function Contact() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-cyan-600" />
+                  <div className="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-yellow-400" />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">

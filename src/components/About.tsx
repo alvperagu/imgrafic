@@ -22,7 +22,7 @@ function About() {
 
             <div className="space-y-4">
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
                   <Award className="w-6 h-6 text-cyan-600" />
                 </div>
                 <div>
@@ -37,7 +37,7 @@ function About() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
                   <Users className="w-6 h-6 text-cyan-600" />
                 </div>
                 <div>
@@ -53,7 +53,7 @@ function About() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
                   <Zap className="w-6 h-6 text-cyan-600" />
                 </div>
                 <div>
@@ -78,7 +78,7 @@ function About() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-cyan-600 text-white p-8 rounded-xl shadow-xl">
+            <div className="absolute -bottom-6 -right-6 bg-yellow-400 text-back p-8 rounded-xl shadow-xl">
               <div className="text-4xl font-bold mb-1">15+</div>
               <div className="text-sm">Años de experiencia</div>
             </div>

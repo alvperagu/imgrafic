@@ -16,14 +16,14 @@ const projects = [
   {
     title: "Rotulación",
     description:
-      "Rotulación interior y exterior con vinilo de alta durabilidad, señalética personalizada y aplicaciones gráficas para escaparates, vehículos y espacios comerciales.",
+      "Rotulación interior y exterior con vinilo de alta durabilidad, aplicaciones gráficas para escaparates, vehículos y espacios comerciales.",
     type: "Rotulación",
     image: tallerImg,
   },
   {
     title: "Copistería Profesional",
     description:
-      "Servicio de copias, escaneo y encuadernación para documentos empresariales.",
+      "Servicio integral de copiado, escaneo y encuadernación, garantizando precisión y presentación profesional.",
     type: "Copistería",
     image: copisteriaImg,
   },
@@ -54,7 +54,7 @@ function Services() {
   return (
     <section
       id="services"
-      className="py-20 bg-gradient-to-br from-gray-50 to-cyan-50"
+      className="py-20 bg-gradient-to-br from-gray-50 to-yellow-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -70,32 +70,29 @@ function Services() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-xl shadow-lg bg-white hover:shadow-2xl transition-all duration-500"
+              className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden relative">
                 <img
-                  src={project.image}
+                  src={`${project.image}?auto=compress&cs=tinysrgb&w=800`}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="inline-block px-3 py-1 bg-cyan-600 text-xs font-semibold rounded-full mb-3">
-                    {project.type}
-                  </span>
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-200 text-sm">{project.description}</p>
-                </div>
-              </div>
-              <div className="p-6">
-                <span className="inline-block px-3 py-1 bg-cyan-100 text-cyan-700 text-xs font-semibold rounded-full mb-3">
+
+              {/* Full-card dark overlay (covers image + content on hover) */}
+              <div className="absolute inset-0 bg-transparent group-hover:bg-black/30 transition-colors duration-300 pointer-events-none z-10"></div>
+
+              <div className="relative z-20 p-6 bg-gradient-to-br from-white to-gray-50 group-hover:from-yellow-50 group-hover:to-white transition-colors duration-300">
+                <span className="inline-block px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-semibold rounded-full mb-3 group-hover:bg-yellow-200 transition-colors duration-300">
                   {project.type}
                 </span>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-yellow-700 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 text-sm">{project.description}</p>
+                <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors duration-300">
+                  {project.description}
+                </p>
               </div>
             </div>
           ))}

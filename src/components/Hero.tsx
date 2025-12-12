@@ -1,7 +1,23 @@
 import { ArrowDown } from "lucide-react";
-import fondo from "../assets/fondo.png";
+import fondoDesktop from "../assets/fondo.png";
+import fondoVertical from "../assets/fondovertical.png";
+import { useEffect, useState } from "react";
 
 function Hero() {
+  const [bgImage, setBgImage] = useState(fondoDesktop);
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  useEffect(() => {
+    const update = () => {
+      const isLarge = window.matchMedia("(min-width: 1024px)").matches;
+      setIsDesktop(isLarge);
+      setBgImage(isLarge ? fondoDesktop : fondoVertical);
+    };
+
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
   const scrollToServices = () => {
     const element = document.getElementById("services");
     if (element) {
@@ -14,11 +30,11 @@ function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center bg-center overflow-hidden hero-bg"
       style={{
-        backgroundImage: `url(${fondo})`,
+        backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed",
+        backgroundAttachment: isDesktop ? "fixed" : "scroll",
       }}
     >
       {/* Gradient overlay for better readability */}

@@ -38,10 +38,27 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Make hero background less zoomed on small screens */
+/* Hero background optimization */
+.hero-bg {
+  /* Ensures crisp rendering on high DPI screens */
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Mobile screens: disable fixed attachment and optimize sizing */
+@media (max-width: 768px) {
+  .hero-bg {
+    background-attachment: scroll;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+}
+
+/* Small mobile screens: ensure full image coverage */
 @media (max-width: 640px) {
   .hero-bg {
-    background-size: 100% auto !important;
-    background-position: center top !important;
+    background-size: 120% auto !important;
+    background-position: center center !important;
   }
 }

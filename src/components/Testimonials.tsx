@@ -134,7 +134,7 @@ function Testimonials() {
           </p>
         </div>
 
-        {/* Google rating summary */}
+        {/* Google rating */}
         <div className="flex items-center justify-center gap-2 mb-12">
           <img
             src="https://www.google.com/favicon.ico"

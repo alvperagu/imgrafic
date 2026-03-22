@@ -42,32 +42,15 @@
     }
   }
 
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-
-  @keyframes glow {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 40px rgba(6, 182, 212, 0.1);
-    }
-    50% {
-      box-shadow: 0 0 30px rgba(6, 182, 212, 0.5), 0 0 60px rgba(6, 182, 212, 0.2);
-    }
-  }
-
-  @keyframes slideUp {
+  /* Mobile hamburger menu slide-in animation */
+  @keyframes fadeSlideIn {
     from {
       opacity: 0;
-      transform: translateY(40px);
+      transform: translateX(-12px);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(0);
     }
   }
 
@@ -88,4 +71,20 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Prevent horizontal overflow on mobile */
+body {
+  overflow-x: hidden;
+}
+
+/* Hero image stays absolutely positioned within the section */
+
+/* Improve tap targets on mobile */
+@media (max-width: 767px) {
+  button,
+  a {
+    min-height: 44px;
+  }
 }

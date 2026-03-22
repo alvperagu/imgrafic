@@ -111,7 +111,7 @@ function Footer() {
                   href="#services"
                   className="text-gray-400 hover:text-cyan-400 transition-colors"
                 >
-                  services
+                  Servicios
                 </a>
               </li>
               <li>

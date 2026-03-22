@@ -7,44 +7,44 @@ import designImg from "../assets/design.jpg";
 
 const projects = [
   {
-    title: "Diseño Gráfico",
+    title: "Diseño Gráfico Profesional",
     description:
-      "Soluciones creativas y profesionales para identidad visual, branding, material publicitario y diseño de piezas corporativas listas para impresión.",
+      "Creamos la identidad visual que tu marca merece: logotipos, branding, material publicitario y piezas corporativas listas para impresión. Diseño orientado a resultados para empresas y autónomos.",
     type: "Diseño Gráfico",
     image: designImg,
   },
   {
-    title: "Rotulación",
+    title: "Rotulación Comercial e Industrial",
     description:
-      "Rotulación interior y exterior con vinilo de alta durabilidad, aplicaciones gráficas para escaparates, vehículos y espacios comerciales.",
+      "Da visibilidad a tu negocio con rótulos interiores y exteriores de alta durabilidad: escaparates, vehículos, locales comerciales y espacios de trabajo. Instalación profesional incluida.",
     type: "Rotulación",
     image: tallerImg,
   },
   {
     title: "Copistería Profesional",
     description:
-      "Servicio integral de copiado, escaneo y encuadernación, garantizando precisión y presentación profesional.",
+      "Copias, impresiones, escáner y encuadernación con acabado impecable. Ideal para documentación empresarial, trabajos académicos, informes y presentaciones que necesitan verse bien.",
     type: "Copistería",
     image: copisteriaImg,
   },
   {
-    title: "Serigrafía y Personalizaciones",
+  title: "Seriografía y Personalización",
     description:
-      "Personalización de tazas, camisetas, textiles, artículos corporativos y merchandising con serigrafía, impresión digital y otras técnicas de alta durabilidad.",
+      "Camisetas, tazas, textiles y merchandising corporativo con tu logo o diseño. Perfecto para uniformes de empresa, eventos, regalos de empresa y promociones. Pequeñas y grandes tiradas.",
     type: "Personalizaciones",
     image: camisetasImg,
   },
   {
     title: "Impresión Offset y Digital",
     description:
-      "Impresión profesional para grandes y pequeñas tiradas, con acabados precisos, máxima fidelidad de color y equipos de última generación.",
+      "Alta fidelidad de color y acabados perfectos tanto para tiradas cortas como para grandes volúmenes. La solución más profesional y económica según tus necesidades.",
     type: "Impresión Offset",
     image: impresionOffsetImg,
   },
   {
-    title: "Flyers, Folletos y Tarjetas",
+    title: "Flyers, Folletos y Tarjetas de Visita",
     description:
-      "Diseño e impresión de flyers, folletos y tarjetas corporativas personalizadas para mejorar la presencia y comunicación de tu marca.",
+      "Materiales publicitarios que abren puertas: tarjetas de visita, flyers para tu local, trípticos informativos y folletos corporativos. Diseño e impresión de calidad al mejor precio.",
     type: "Impresión Digital",
     image: flyerImg,
   },
@@ -59,10 +59,12 @@ function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Nuestros Servicos
+            Nuestros Servicios de Impresión y Diseño
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ofrecemos una amplia gama de servicios de impresión y diseño.
+            Todo lo que tu negocio necesita para comunicar con impacto:
+            impresión, diseño, rotulación y personalización bajo un mismo
+            techo, en Badajoz.
           </p>
         </div>
 
@@ -74,8 +76,10 @@ function Services() {
             >
               <div className="aspect-[4/3] overflow-hidden relative">
                 <img
-                  src={`${project.image}?auto=compress&cs=tinysrgb&w=800`}
+                  src={project.image}
                   alt={project.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>

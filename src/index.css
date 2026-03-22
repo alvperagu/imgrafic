@@ -26,6 +26,18 @@
     }
   }
 
+  /* Mobile hamburger menu slide-in animation */
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   .bg-grid-pattern {
     background-image:
       linear-gradient(to right, #e5e7eb 1px, transparent 1px),
@@ -36,49 +48,20 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
-/* Hero background optimization - responsive sizing */
-.hero-bg {
-  /* Ensures crisp rendering on high DPI screens */
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-attachment: fixed;
-  background-color: #1a1a1a; /* Fallback color if image doesn't load */
+/* Prevent horizontal overflow on mobile */
+body {
+  overflow-x: hidden;
 }
 
-/* Large screens: full fixed parallax effect */
-@media (min-width: 1024px) {
-  .hero-bg {
-    background-size: 100% !important;
-    background-attachment: fixed;
-    background-position: center;
-  }
-}
+/* Hero image stays absolutely positioned within the section */
 
-/* Tablets: disable fixed attachment for better performance */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .hero-bg {
-    background-attachment: scroll;
-    background-size: cover !important;
-    background-position: center !important;
-  }
-}
-
-/* Small tablets/landscape: optimize for smaller viewport */
-@media (min-width: 641px) and (max-width: 767px) {
-  .hero-bg {
-    background-attachment: scroll;
-    background-size: cover !important;
-    background-position: center !important;
-  }
-}
-
-/* Mobile phones: ensure full coverage without gaps */
-@media (max-width: 640px) {
-  .hero-bg {
-    background-attachment: scroll;
-    background-size: cover !important;
-    background-position: center center !important;
+/* Improve tap targets on mobile */
+@media (max-width: 767px) {
+  button,
+  a {
+    min-height: 44px;
   }
 }

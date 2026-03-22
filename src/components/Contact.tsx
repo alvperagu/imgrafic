@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
-import emailjs from "@emailjs/browser";
 
 interface FormData {
   name: string;
   email: string;
   phone: string;
   message: string;
+  honeypot: string;
 }
 
 function Contact() {
@@ -15,6 +15,7 @@ function Contact() {
     email: "",
     phone: "",
     message: "",
+    honeypot: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<
@@ -22,7 +23,7 @@ function Contact() {
   >("idle");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -43,15 +44,36 @@ function Contact() {
     setIsSubmitting(true);
 
     try {
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      const response = await fetch("https://api.staticforms.xyz/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          accessKey: import.meta.env.VITE_STATICFORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          $honeypot: formData.honeypot,
+          replyTo: "@",
+          subject: `Nuevo mensaje de contacto de ${formData.name}`,
+        }),
+      });
 
-      await emailjs.send(serviceId, templateId, formData, publicKey);
+      const result = await response.json();
 
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", phone: "", message: "" });
-      setTimeout(() => setSubmitStatus("idle"), 3000);
+      if (result.success) {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          honeypot: "",
+        });
+        setTimeout(() => setSubmitStatus("idle"), 3000);
+      } else {
+        throw new Error(result.message);
+      }
     } catch (err) {
       console.error("Error sending email:", err);
       setSubmitStatus("error");
@@ -61,10 +83,7 @@ function Contact() {
   };
 
   return (
-    <section
-      id="contact"
-      className="py-20 bg-gradient-to-br from-gray-50 to-yellow-50"
-    >
+    <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Contacto</h2>
@@ -81,6 +100,16 @@ function Contact() {
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot anti-spam field — hidden from real users */}
+              <input
+                type="text"
+                name="honeypot"
+                value={formData.honeypot}
+                onChange={handleChange}
+                style={{ display: "none" }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
               <div>
                 <label
                   htmlFor="name"
